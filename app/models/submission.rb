@@ -36,7 +36,7 @@ class Submission < ApplicationRecord
   validates :track, presence: true
   validates :track, inclusion: { in: tracks.keys }
 
-  enum :excellence_award_track, {smart_contracts: "smart_contracts", ux: "ux", social_impact: "social_impact"}
+  enum :excellence_award_track, {smart_contracts: "smart_contracts", ux: "ux" }#, social_impact: "social_impact"}
   validates :excellence_award_track, inclusion: { in: excellence_award_tracks.keys }, allow_nil: true
 
   has_many :excellence_judgements, inverse_of: :submission
@@ -75,7 +75,7 @@ class Submission < ApplicationRecord
   HUMAN_READABLE_EXCELLENCE_TRACKS = {
     smart_contracts: "Smart Contracts",
     ux: "User Experience",
-    social_impact: "Social Impact"
+    # social_impact: "Social Impact"
   }.with_indifferent_access
 
   TRACK_ICONS = {
