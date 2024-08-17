@@ -124,7 +124,9 @@ rake db:drop
 rake db:create
 rake db:migrate
 rake db:seed
-rails server
+
+# run with `rails server` or:
+bundle exec guard
 
 
 # configure VSCode Cmd+Shift+P and select "Install 'code' command in PATH"
